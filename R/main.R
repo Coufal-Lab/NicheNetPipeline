@@ -40,47 +40,13 @@ targets_all = c("JMJD6")
 if (!file.exists('extdata')) dir.create('extdata')
 
 # Load in extdata
-# lr_network
-if (file.exists('extdata/lr_network.rds')) {
-  lr_network <- readRDS("extdata/lr_network.rds")
-} else {
-  lr_network <- readRDS(url("https://zenodo.org/record/3260758/files/lr_network.rds"))
-}
+lr_network <- readRDS(system.file("extdata", "lr_network.rds", package = "NicheNetPipeline"))
+ligand_target_matrix <- readRDS(system.file("extdata", "ligand_target_matrix.rds", package = "NicheNetPipeline"))
+weighted_networks <- readRDS(system.file("extdata", "weighted_networks.rds", package = "NicheNetPipeline"))
 
-# ligand_tf_matrix
-if (file.exists('extdata/ligand_tf_matrix.rds')) {
-  ligand_tf_matrix <- readRDS("extdata/ligand_tf_matrix.rds")
-} else {
-  ligand_tf_matrix <- readRDS(url("https://zenodo.org/record/5518463/files/ligand_tf_matrix.rds"))
-}
-
-# ligand_target_matrix
-if (file.exists('extdata/ligand_target_matrix.rds')) {
-  ligand_target_matrix <- readRDS("extdata/ligand_target_matrix.rds")
-} else {
-  ligand_target_matrix <- readRDS(url("https://zenodo.org/record/5518463/files/ligand_target_matrix.rds"))
-}
-
-# weighted_networks
-if (file.exists('extdata/weighted_networks.rds')) {
-  weighted_networks <- readRDS("extdata/weighted_networks.rds")
-} else {
-  weighted_networks <- readRDS(url("https://zenodo.org/record/5518463/files/weighted_networks.rds"))
-}
-
-# sig network
-if (file.exists('extdata/signaling_network.rds')) {
-  sig_network <- readRDS("extdata/signaling_network.rds")
-} else {
-  sig_network <- readRDS(url("https://zenodo.org/record/5518463/files/signaling_network.rds"))
-}
-
-# gr network
-if (file.exists('extdata/gr_network.rds')) {
-  gr_network <- readRDS("extdata/gr_network.rds")
-} else {
-  gr_network <- readRDS(url("https://zenodo.org/record/5518463/files/gr_network.rds"))
-}
+ligand_tf_matrix <- readRDS(system.file("extdata", "ligand_tf_matrix.rds", package = "NicheNetPipeline"))
+sig_network <- readRDS(system.file("extdata", "signaling_network.rds", package = "NicheNetPipeline"))
+gr_network <- readRDS(system.file("extdata", "gr_network.rds", package = "NicheNetPipeline"))
 
 
 # Reading in data and setting constants ^^
