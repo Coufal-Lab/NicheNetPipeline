@@ -29,17 +29,15 @@ configure <- function(config_file) {
   names(sender_specific_genes)[1] <<- 'gene'
 }
 
-configure('nichenetConfig.yml')
+configure('/Users/michaelzakariaie/Desktop/nichenetConfig.yml')
 
 # These are the ligands/targets you want a figure of the signaling pathway for
 ligands_all = c("NLGN3")
 targets_all = c("JMJD6")
 # ------------------------------------------------------------
 
-# Make extdata directory
-if (!file.exists('extdata')) dir.create('extdata')
-
-# Load in extdata
+# devtools::create('NicheNetPipeline')
+# library(NicheNetPipeline)
 lr_network <- readRDS(system.file("extdata", "lr_network.rds", package = "NicheNetPipeline"))
 ligand_target_matrix <- readRDS(system.file("extdata", "ligand_target_matrix.rds", package = "NicheNetPipeline"))
 weighted_networks <- readRDS(system.file("extdata", "weighted_networks.rds", package = "NicheNetPipeline"))
@@ -47,7 +45,6 @@ weighted_networks <- readRDS(system.file("extdata", "weighted_networks.rds", pac
 ligand_tf_matrix <- readRDS(system.file("extdata", "ligand_tf_matrix.rds", package = "NicheNetPipeline"))
 sig_network <- readRDS(system.file("extdata", "signaling_network.rds", package = "NicheNetPipeline"))
 gr_network <- readRDS(system.file("extdata", "gr_network.rds", package = "NicheNetPipeline"))
-
 
 # Reading in data and setting constants ^^
 
