@@ -28,6 +28,8 @@ configure <- function(config_file) {
   
   sender_specific_genes <<- read.csv(config$sender_specific_genes)
   names(sender_specific_genes)[1] <<- 'gene'
+  
+  load()
 }
 
 #configure('/Users/michaelzakariaie/Desktop/nichenetConfig.yml')
@@ -39,13 +41,16 @@ targets_all = c("JMJD6")
 
 # devtools::create('NicheNetPipeline')
 # library(NicheNetPipeline)
-lr_network <- readRDS(system.file("extdata", "lr_network.rds", package = "NicheNetPipeline"))
-ligand_target_matrix <- readRDS(system.file("extdata", "ligand_target_matrix.rds", package = "NicheNetPipeline"))
-weighted_networks <- readRDS(system.file("extdata", "weighted_networks.rds", package = "NicheNetPipeline"))
 
-ligand_tf_matrix <- readRDS(system.file("extdata", "ligand_tf_matrix.rds", package = "NicheNetPipeline"))
-sig_network <- readRDS(system.file("extdata", "signaling_network.rds", package = "NicheNetPipeline"))
-gr_network <- readRDS(system.file("extdata", "gr_network.rds", package = "NicheNetPipeline"))
+load <- function() {
+  lr_network <<- readRDS(system.file("extdata", "lr_network.rds", package = "NicheNetPipeline"))
+  ligand_target_matrix <<- readRDS(system.file("extdata", "ligand_target_matrix.rds", package = "NicheNetPipeline"))
+  weighted_networks <<- readRDS(system.file("extdata", "weighted_networks.rds", package = "NicheNetPipeline"))
+  
+  ligand_tf_matrix <<- readRDS(system.file("extdata", "ligand_tf_matrix.rds", package = "NicheNetPipeline"))
+  sig_network <<- readRDS(system.file("extdata", "signaling_network.rds", package = "NicheNetPipeline"))
+  gr_network <<- readRDS(system.file("extdata", "gr_network.rds", package = "NicheNetPipeline"))
+}
 
 # Reading in data and setting constants ^^
 
