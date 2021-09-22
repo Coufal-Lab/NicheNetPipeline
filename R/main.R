@@ -29,15 +29,12 @@ configure <- function(config_file) {
   names(sender_specific_genes)[1] <<- 'gene'
 }
 
-configure('/Users/michaelzakariaie/Desktop/nichenetConfig.yml')
+configure('nichenetConfig.yml')
 
 # These are the ligands/targets you want a figure of the signaling pathway for
 ligands_all = c("NLGN3")
 targets_all = c("JMJD6")
 # ------------------------------------------------------------
-
-devtools::create('NicheNetPipeline')
-library(NicheNetPipeline)
 
 # Make extdata directory
 if (!file.exists('extdata')) dir.create('extdata')
