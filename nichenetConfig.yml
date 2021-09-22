@@ -1,0 +1,6 @@
+tpm_cutoff: 10
+working_directory: /Users/michaelzakariaie/Desktop/General Nichenet
+output_directory: Bulk to MG signaling figures and rankings
+reciever_expression: mg_expression.csv
+sender_expression: bulk expression.csv
+sender_specific_genes: Fetal_DEG.csv
