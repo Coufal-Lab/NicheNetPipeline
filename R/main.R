@@ -6,6 +6,7 @@ library(tidyverse)
 library(cowplot)
 library(ggpubr)
 library(RColorBrewer)
+library(yaml)
 
 #' Configure function
 #' 
